@@ -7,5 +7,5 @@ A map-based web game where users answer location questions (capitals or tourist 
 - Interactive map display using Leaflet.js.
 - Time-limited question answering.
 - Score tracking and feedback for users.
-- Json file containing questions and answers.
-- Json file containing leaderboard.
+- Json files containing leaderboard, questions and answers.
+- Html files containing views.
