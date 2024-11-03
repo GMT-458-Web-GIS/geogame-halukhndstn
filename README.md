@@ -10,7 +10,7 @@ A map-based WEB game where users answer location questions (capitals or tourist 
 - Start Game button
 - Pop-ups
 ### Main Content Area:
-- Map display
+- Map display with **leaflet.js**
 - Question panel
 ### Question Panel
 - Score tracker
