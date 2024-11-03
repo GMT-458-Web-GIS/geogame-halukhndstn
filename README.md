@@ -1,1 +1,11 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ATV5e7Id)
+# Counrty-Guesser: Test Your Knowledge of World Locations
+
+## Overview
+A map-based web game where users answer location questions (capitals or tourist destinations) by clicking on the map within a set time limit. Built with **Leaflet.js** and deployed using **GitHub Pages**.
+
+## Requirements
+- Interactive map display using Leaflet.js.
+- Time-limited question answering.
+- Score tracking and feedback for users.
+- Json file containing questions and answers.
+- Json file containing leaderboard.
