@@ -52,6 +52,28 @@ span{
 }
 
 .navbar a:hover,
+.navbar a.active{
+    color: #154b6b; 
+}
+
+.startGame{
+    padding: 10px 28px;
+    background-color: #F5F5F5; 
+    color: black; 
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 19px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.startGame:hover{
+    background-color: #154b6b; 
+    color: #F5F5F5; 
+    border: 2px solid #154b6b;
+    box-shadow: 0 0 25px #154b6b; 
+}
 
 #map {
     height: calc(100vh - 70px);
