@@ -5,7 +5,7 @@ let timeLeft = 300;
 let timerInterval = null;
 let nextQuestionLimit = 5;
 
-fetch('./data/quesitons.json')
+fetch('./data/questions.json')
     .then(response => response.json())
     .then(data => questions = data);
 
@@ -23,29 +23,6 @@ document.getElementById('startGame').addEventListener('click', (e) => {
 document.getElementById('submitAnswer').addEventListener('click', () => {
     checkSelectedPoint();
 });
-
-function checkSelectedPoint() {
-    if (!selectedPoint) {
-        alert("Please select a point on the map first!");
-        return;
-    }
-
-    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${selectedPoint.lat}&lon=${selectedPoint.lng}`)
-        .then(response => response.json())
-        .then(data => {
-            const country = data.address.country;
-            if (country === currentQuestion.answer) {
-                score += 10;
-                alert("Correct! +10 Points");
-            } else {
-                score -= 5;
-                alert(`Wrong! The correct answer was ${currentQuestion.answer}.`);
-            }
-            updateGameInfo();
-            nextQuestion();
-        })
-        .catch(error => console.error('Error:', error));
-}
 
 function showQuestionCard() {
     document.getElementById('questionCard').classList.remove('hidden');
@@ -75,6 +52,7 @@ function updateGameInfo() {
 function nextQuestion() {
     if (questions.length === 0 || nextQuestionLimit <= 0) {
         document.getElementById('nextQuestion').classList.add('hidden');
+        alert("No more questions or question limit reached!");
         return;
     }
     currentQuestion = questions.splice(Math.floor(Math.random() * questions.length), 1)[0];
@@ -82,7 +60,12 @@ function nextQuestion() {
 }
 
 function displayQuestion(questionText) {
-    document.getElementById('questionContent').innerText = questionText;
+    const questionContent = document.getElementById('questionContent');
+    if (!questionText) {
+        questionContent.innerText = "No question available.";
+    } else {
+        questionContent.innerText = questionText;
+    }
 }
 
 function endGame() {
