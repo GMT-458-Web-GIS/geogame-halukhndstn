@@ -1,0 +1,142 @@
+[
+    {
+        "question": "Which country is Kabul its capital?",
+        "answer": "Afghanistan",
+        "answer_geojson": "afg.geo.json"
+    },
+    {
+        "question": "Which country is Tirana its capital?",
+        "answer": "Albania",
+        "answer_geojson": "alb.geo.json"
+    },
+    {
+        "question": "Which country is Algiers its capital?",
+        "answer": "Algeria",
+        "answer_geojson": "dza.geo.json"
+    },
+    {
+        "question": "Which country is Andorra la Vella its capital?",
+        "answer": "Andorra",
+        "answer_geojson": "and.geo.json"
+    },
+    {
+        "question": "Which country is Luanda its capital?",
+        "answer": "Angola",
+        "answer_geojson": "ago.geo.json"
+    },
+    {
+        "question": "Which country is Saint John's its capital?",
+        "answer": "Antigua and Barbuda",
+        "answer_geojson": "atg.geo.json"
+    },
+    {
+        "question": "Which country is Buenos Aires its capital?",
+        "answer": "Argentina",
+        "answer_geojson": "arg.geo.json"
+    },
+    {
+        "question": "Which country is Yerevan its capital?",
+        "answer": "Armenia",
+        "answer_geojson": "arm.geo.json"
+    },
+    {
+        "question": "Which country is Canberra its capital?",
+        "answer": "Australia",
+        "answer_geojson": "aus.geo.json"
+    },
+    {
+        "question": "Which country is Vienna its capital?",
+        "answer": "Austria",
+        "answer_geojson": "aut.geo.json"
+    },
+    {
+        "question": "Which country is Baku its capital?",
+        "answer": "Azerbaijan",
+        "answer_geojson": "aze.geo.json"
+    },
+    {
+        "question": "Which country is Nassau its capital?",
+        "answer": "Bahamas",
+        "answer_geojson": "bhs.geo.json"
+    },
+    {
+        "question": "Which country is Manama its capital?",
+        "answer": "Bahrain",
+        "answer_geojson": "bhr.geo.json"
+    },
+    {
+        "question": "Which country is Dhaka its capital?",
+        "answer": "Bangladesh",
+        "answer_geojson": "bgd.geo.json"
+    },
+    {
+        "question": "Which country is Bridgetown its capital?",
+        "answer": "Barbados",
+        "answer_geojson": "brb.geo.json"
+    },
+    {
+        "question": "Which country is Minsk its capital?",
+        "answer": "Belarus",
+        "answer_geojson": "blr.geo.json"
+    },
+    {
+        "question": "Which country is Brussels its capital?",
+        "answer": "Belgium",
+        "answer_geojson": "bel.geo.json"
+    },
+    {
+        "question": "Which country is Belmopan its capital?",
+        "answer": "Belize",
+        "answer_geojson": "blz.geo.json"
+    },
+    {
+        "question": "Which country is Porto-Novo its capital?",
+        "answer": "Benin",
+        "answer_geojson": "ben.geo.json"
+    },
+    {
+        "question": "Which country is Thimphu its capital?",
+        "answer": "Bhutan",
+        "answer_geojson": "btn.geo.json"
+    },
+    {
+        "question": "Which country is Sucre its capital?",
+        "answer": "Bolivia",
+        "answer_geojson": "bol.geo.json"
+    },
+    {
+        "question": "Which country is Sarajevo its capital?",
+        "answer": "Bosnia and Herzegovina",
+        "answer_geojson": "bih.geo.json"
+    },
+    {
+        "question": "Which country is Gaborone its capital?",
+        "answer": "Botswana",
+        "answer_geojson": "bwa.geo.json"
+    },
+    {
+        "question": "Which country is Braslia its capital?",
+        "answer": "Brazil",
+        "answer_geojson": "bra.geo.json"
+    },
+    {
+        "question": "Which country is Bandar Seri Begawan its capital?",
+        "answer": "Brunei",
+        "answer_geojson": "brn.geo.json"
+    },
+    {
+        "question": "Which country is Sofia its capital?",
+        "answer": "Bulgaria",
+        "answer_geojson": "bgr.geo.json"
+    },
+    {
+        "question": "Which country is Ouagadougou its capital?",
+        "answer": "Burkina Faso",
+        "answer_geojson": "bfa.geo.json"
+    },
+    {
+        "question": "Which country is Gitega its capital?",
+        "answer": "Burundi",
+        "answer_geojson": "bdi.geo.json"
+    }
+]

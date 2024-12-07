@@ -13,20 +13,20 @@
         <a class="logo">
             <span>Country</span>Guesser
         </a>
-        
-        <nav class="navbar">
-            <a href="">How to Play?</a>
-        </nav>
-
-        <a href="" class="startGame">Start Game</a>
+        <a href="#" id="startGame" class="startGame">Start Game</a>
     </header>
     
     <div id="map"></div>
-    
-    <div id="location-list">
-        <ul id="locations"></ul>
+
+    <div id="questionCard" class="hidden">
+        <div id="gameInfo">
+            <span id="time">Time: 5:00</span>
+            <span id="score">Score: 0</span>
+        </div>
+        <div id="questionContent"></div>
+        <button id="nextQuestion" class="hidden">Next Question (5)</button>
     </div>
-        
+
     <script src="./scripts/map_script.js"></script>
 </body>
 </html>
