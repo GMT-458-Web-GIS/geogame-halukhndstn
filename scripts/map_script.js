@@ -5,3 +5,15 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png
     subdomains: 'abcd',
     maxZoom: 19
 }).addTo(map);
+
+let selectedPoint = null;
+let marker = null;
+
+map.on('click', function (e) {
+    selectedPoint = e.latlng;
+    if (marker) {
+        map.removeLayer(marker);
+    }
+    marker = L.marker(selectedPoint).addTo(map);
+    alert("You selected a point. Click 'Submit Answer' to check.");
+});

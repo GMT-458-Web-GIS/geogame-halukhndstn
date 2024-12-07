@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Which country is Paris its capital?",
+        "answer": "France"
+    },
+    {
+        "question": "Which country is Washington, D.C. its capital?",
+        "answer": "United States"
+    },
+    {
+        "question": "Which country is London its capital?",
+        "answer": "United Kingdom"
+    },
+    {
+        "question": "Which country is Berlin its capital?",
+        "answer": "Germany"
+    },
+    {
+        "question": "Which country is Ottawa its capital?",
+        "answer": "Canada"
+    },
+    {
+        "question": "Which country is Rome its capital?",
+        "answer": "Italy"
+    },
+    {
+        "question": "Which country is Madrid its capital?",
+        "answer": "Spain"
+    },
+    {
+        "question": "Which country is Canberra its capital?",
+        "answer": "Australia"
+    },
+    {
+        "question": "Which country is Moscow its capital?",
+        "answer": "Russia"
+    },
+    {
+        "question": "Which country is Beijing its capital?",
+        "answer": "China"
+    }
+]

@@ -20,12 +20,36 @@ document.getElementById('startGame').addEventListener('click', (e) => {
     nextQuestion();
 });
 
-function showQuestionCard() {
-    const questionCard = document.getElementById('questionCard');
-    questionCard.classList.remove('hidden');
+document.getElementById('submitAnswer').addEventListener('click', () => {
+    checkSelectedPoint();
+});
 
-    const nextButton = document.getElementById('nextQuestion');
-    nextButton.classList.remove('hidden');
+function checkSelectedPoint() {
+    if (!selectedPoint) {
+        alert("Please select a point on the map first!");
+        return;
+    }
+
+    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${selectedPoint.lat}&lon=${selectedPoint.lng}`)
+        .then(response => response.json())
+        .then(data => {
+            const country = data.address.country;
+            if (country === currentQuestion.answer) {
+                score += 10;
+                alert("Correct! +10 Points");
+            } else {
+                score -= 5;
+                alert(`Wrong! The correct answer was ${currentQuestion.answer}.`);
+            }
+            updateGameInfo();
+            nextQuestion();
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function showQuestionCard() {
+    document.getElementById('questionCard').classList.remove('hidden');
+    document.getElementById('submitAnswer').classList.remove('hidden');
 }
 
 function startTimer() {
@@ -59,42 +83,6 @@ function nextQuestion() {
 
 function displayQuestion(questionText) {
     document.getElementById('questionContent').innerText = questionText;
-}
-
-map.on('click', function (e) {
-    if (!currentQuestion) return;
-
-    fetch(`./data/countries/${currentQuestion.answer_geojson}`)
-        .then(response => response.json())
-        .then(geojson => {
-            const userPoint = turf.point([e.latlng.lng, e.latlng.lat]);
-            const countryPolygon = turf.featureCollection(geojson.features);
-
-            if (turf.booleanPointInPolygon(userPoint, countryPolygon)) {
-                score += 10;
-                alert("Correct! +10 Points");
-            } else {
-                score -= 5;
-                alert("Wrong! -5 Points");
-            }
-            updateGameInfo();
-        });
-});
-
-document.getElementById('nextQuestion').addEventListener('click', () => {
-    nextQuestionLimit--;
-    updateNextQuestionButton();
-    nextQuestion();
-});
-
-function updateNextQuestionButton() {
-    const nextButton = document.getElementById('nextQuestion');
-    if (nextQuestionLimit > 0) {
-        nextButton.innerText = `Next Question (${nextQuestionLimit})`;
-        nextButton.classList.remove('hidden');
-    } else {
-        nextButton.classList.add('hidden');
-    }
 }
 
 function endGame() {
