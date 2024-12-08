@@ -91,33 +91,24 @@ function updateGameInfo() {
 
 function nextQuestion() {
     if (questionsAnswered >= totalQuestions) {
-        endGame();
-        alert(`Game Over! Your Score: ${score}`);
-    }
-
-    if (questions.length === 0) {
-        alert("No more questions available!");
+        alert("Maximum number of questions reached. Game over!");
         endGame();
         return;
     }
+    questionsAnswered++;
     currentQuestion = questions.splice(Math.floor(Math.random() * questions.length), 1)[0];
-
-    if (currentQuestion && currentQuestion.question) {
-        questionsAnswered++;
-        displayQuestion(currentQuestion.question);
-    } else {
-        alert("No question available.");
-    }
+    displayQuestion(currentQuestion.question);
     updateGameInfo();
 }
 
-
 function displayQuestion(questionText) {
-    const questionContent = document.getElementById('questionContent');
-    if (questionContent) {
-        questionContent.innerText = questionText || "No question available.";
-    } else {
-        console.error("Question content element not found!");
+    document.getElementById('questionContent').innerText = questionText || "No question available.";
+}
+
+function checkSelectedPoint() {
+    if (!selectedPoint) {
+        alert("Select a point on the map first!");
+        return;
     }
 }
 
@@ -125,16 +116,17 @@ function passQuestion() {
     if (passRights > 0) {
         passRights--;
         updatePassButton();
-        nextQuestion();
+        currentQuestion = questions.splice(Math.floor(Math.random() * questions.length), 1)[0];
+        displayQuestion(currentQuestion.question);
     }
 }
 
 function updatePassButton() {
-    const passQuestion = document.getElementById('passQuestion');
-    passQuestion.innerText = `Pass Question (${passRights} left)`;
+    const passButton = document.getElementById('passQuestion');
+    passButton.innerText = `Pass Question (${passRights} left)`;
     if (passRights <= 0) {
-        passQuestion.classList.add('disabled');
-        passQuestion.disabled = true;
+        passButton.classList.add('disabled');
+        passButton.disabled = true;
     }
 }
 

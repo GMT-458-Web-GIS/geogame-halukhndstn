@@ -23,11 +23,6 @@ map.on('click', function (e) {
 });
 
 document.getElementById('submitAnswer').addEventListener('click', function () {
-    if (!selectedPoint) {
-        alert("Please select a point on the map first!");
-        return;
-    }
-
     const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${selectedPoint.lat}&lon=${selectedPoint.lng}&accept-language=en`;
 
     fetch(url)
