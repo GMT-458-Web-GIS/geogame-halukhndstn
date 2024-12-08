@@ -23,14 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 animatedText.classList.remove("hide");
             }, 1000);
         }, 3000); 
-    }, 500); 
+    }, 500);
+
+    hideQuestionCard();
 });
 
 document.getElementById('startGame').addEventListener('click', (e) => {
     e.preventDefault();
-    
-    if (gameStarted) {
 
+    if (gameStarted) {
         const confirmRestart = confirm("Are you sure you want to restart the game?");
         if (confirmRestart) {
             startNewGame();
@@ -40,12 +41,16 @@ document.getElementById('startGame').addEventListener('click', (e) => {
     }
 });
 
-function startNewGame() {
+function resetGameVariables() {
     gameStarted = true;
     score = 0;
     timeLeft = 300;
     questionsAnswered = 0;
     passRights = 3;
+}
+
+function startNewGame() {
+    resetGameVariables();
 
     const passButton = document.getElementById('passQuestion');
     passButton.classList.remove('disabled');
@@ -70,20 +75,6 @@ fetch('./data/questions.json')
     .then(response => response.json())
     .then(data => questions = data);
 
-document.getElementById('startGame').addEventListener('click', (e) => {
-    e.preventDefault();
-    gameStarted = true;
-    score = 0;
-    timeLeft = 300;
-    questionsAnswered = 0;
-    passRights = 3;
-    updatePassButton();
-    updateGameInfo();
-    showQuestionCard();
-    startTimer();
-    nextQuestion();
-});
-
 document.getElementById('submitAnswer').addEventListener('click', checkSelectedPoint);
 document.getElementById('passQuestion').addEventListener('click', passQuestion);
 
@@ -93,11 +84,18 @@ function showQuestionCard() {
     document.getElementById('passQuestion').classList.remove('hidden');
 }
 
+function hideQuestionCard() {
+    document.getElementById('questionCard').classList.add('hidden');
+    document.getElementById('submitAnswer').classList.add('hidden');
+    document.getElementById('passQuestion').classList.add('hidden');
+}
+
 function startTimer() {
     if (timerInterval) clearInterval(timerInterval);
     timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
+            alert(`Time's up! Your score: ${score}`);
             endGame();
         } else {
             timeLeft--;
@@ -114,7 +112,7 @@ function updateGameInfo() {
 
 function nextQuestion() {
     if (questionsAnswered >= totalQuestions) {
-        alert("Maximum number of questions reached. Game over!");
+        alert(`Maximum number of questions reached. Your score: ${score}`);
         endGame();
         return;
     }
