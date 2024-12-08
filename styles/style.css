@@ -119,8 +119,8 @@ span {
     margin-top: 10px;
 }
 
-#nextQuestion:hover, #submitAnswer:hover {
-    background-color: #0056b3;
+#submitAnswer:hover {
+    box-shadow: 0 0 25px #154b6b;
 }
 
 #questionCard {
@@ -169,6 +169,10 @@ span {
     cursor: pointer;
     margin-top: 10px;
     width: 100%;
+}
+
+#passQuestion:hover {
+    box-shadow: 0 0 25px #154b6b;
 }
 
 #passQuestion.disabled {

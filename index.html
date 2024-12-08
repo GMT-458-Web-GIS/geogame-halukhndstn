@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>geoGame</title>
+    <title>CountryGuesser</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -32,8 +32,17 @@
 
     <div id="gameInstructions">
         <h4 id="howToPlay">How to Play?</h4>
-        <p>Select a country on the map that matches the question above.</p>
-        <p>You can skip up to 3 questions. Each correct answer gives +10 points, while wrong answers deduct 5 points.</p>
+        <p>
+            When you start the game, the questions will appear on the left side of the screen. When you find the country that is the answer to the question, mark that country on the map and press the Submit Answer button. You can change the location you have selected until you press the button. You have 3 passes and you can use your pass right by pressing the Pass Question button. Using your pass right will not reduce your question right. If you want to start the game over, press the Restart button. You can also press the CountryGuesser logo to return to the original state of the game.
+        </p>
+        <br>
+        <p>
+            <strong id="howToPlay">
+                Press the Start Game button and enjoy.
+            </strong>
+        </p>
+        
+        
     </div>
     
     <script src="./scripts/map_script.js"></script>

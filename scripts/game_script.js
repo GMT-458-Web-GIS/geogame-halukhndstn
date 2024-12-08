@@ -27,6 +27,11 @@ function startNewGame() {
     timeLeft = 300;
     questionsAnswered = 0;
     passRights = 3;
+
+    const passButton = document.getElementById('passQuestion');
+    passButton.classList.remove('disabled');
+    passButton.disabled = false;
+
     updatePassButton();
     updateGameInfo();
     showQuestionCard();
@@ -40,7 +45,6 @@ function startNewGame() {
     if (howToPlaySection) {
         howToPlaySection.classList.add('hidden');
     }
-    
 }
 
 fetch('./data/questions.json')
