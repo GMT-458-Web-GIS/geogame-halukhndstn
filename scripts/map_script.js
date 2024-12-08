@@ -8,17 +8,21 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png
 
 let selectedPoint = null;
 let marker = null;
+let gameStarted = false;
 
 map.on('click', function (e) {
+    if (!gameStarted) {
+        return;
+    }
     selectedPoint = e.latlng;
+
     if (marker) {
         map.removeLayer(marker);
     }
     marker = L.marker(selectedPoint).addTo(map);
-    alert("You selected a point. Click 'Submit Answer' to check.");
 });
 
-function checkSelectedPoint() {
+document.getElementById('submitAnswer').addEventListener('click', function () {
     if (!selectedPoint) {
         alert("Please select a point on the map first!");
         return;
@@ -30,15 +34,15 @@ function checkSelectedPoint() {
         .then(response => response.json())
         .then(data => {
             if (data && data.address && data.address.country) {
-                const selectedCountry = data.address.country.trim().toLowerCase();
-                const correctCountry = currentQuestion.answer.trim().toLowerCase();
+                const selectedCountry = data.address.country.trim();
+                const correctCountry = currentQuestion.answer.trim();
 
                 if (selectedCountry === correctCountry) {
                     score += 10;
                     alert("Correct! +10 Points");
                 } else {
                     score -= 5;
-                    alert(`Wrong! You selected ${selectedCountry}. The correct answer was ${currentQuestion.answer}.`);
+                    alert(`Wrong! You selected ${selectedCountry}. The correct answer was ${correctCountry}.`);
                 }
             } else {
                 alert("Unable to determine the selected country's name. Please try again.");
@@ -50,4 +54,5 @@ function checkSelectedPoint() {
             console.error('Error:', error);
             alert("An error occurred while checking the location. Please try again.");
         });
-}
+});
+

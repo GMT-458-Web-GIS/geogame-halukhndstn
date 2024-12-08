@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .logo {
@@ -38,6 +38,10 @@ span {
 }
 
 .startGame {
+    position: absolute;
+    top: 50%; 
+    right: 80px; 
+    transform: translateY(-50%);
     padding: 10px 28px;
     background-color: #F5F5F5;
     color: black;
@@ -47,6 +51,7 @@ span {
     letter-spacing: 1px;
     font-weight: 600;
     transition: 0.3s ease;
+    margin-left: auto;
 }
 
 .startGame:hover {
@@ -114,4 +119,57 @@ span {
 
 #nextQuestion:hover, #submitAnswer:hover {
     background-color: #0056b3;
+}
+
+#questionCard {
+    position: absolute;
+    top: 75%;
+    left: 50px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 350px;
+    border-radius: 10px;
+}
+
+#gameInstructions {
+    position: fixed;
+    top: 10%;
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 400px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#gameInstructions h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#passQuestion {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#passQuestion.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
