@@ -1,4 +1,4 @@
-# CounrtyGuesser - 
+# CounrtyGuesser - Test your Knowledge About Capital Cities and Country Locations
 
 **Page:** https://gmt-458-web-gis.github.io/geogame-halukhndstn/
 
