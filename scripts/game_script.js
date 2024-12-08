@@ -7,6 +7,25 @@ let totalQuestions = 10;
 let questionsAnswered = 0;
 let passRights = 3;
 
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedText = document.getElementById("animatedText");
+    animatedText.innerText = "Test your knowledge about capital cities and country locations!";
+
+    setTimeout(() => {
+        animatedText.classList.add("show");
+
+        setTimeout(() => {
+            animatedText.classList.remove("show");
+            animatedText.classList.add("hide");
+
+            setTimeout(() => {
+                animatedText.innerText = "";
+                animatedText.classList.remove("hide");
+            }, 1000);
+        }, 3000); 
+    }, 500); 
+});
+
 document.getElementById('startGame').addEventListener('click', (e) => {
     e.preventDefault();
     

@@ -38,6 +38,24 @@ span {
     color: #154b6b;
 }
 
+.animated-text {
+    display: inline-block;
+    margin-right: 40%;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 1s;
+    color: white;
+}
+
+.animated-text.show {
+    opacity: 1;
+}
+
+.animated-text.hide {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
 .startGame {
     position: absolute;
     top: 50%; 
@@ -108,9 +126,9 @@ span {
     color:#154b6b;
 }
 
-#nextQuestion, #submitAnswer {
+#submitAnswer {
     padding: 10px 15px;
-    background-color: #154b6b;
+    background-color: #639f38;
     color: white;
     border: none;
     border-radius: 5px;
@@ -161,7 +179,7 @@ span {
 }
 
 #passQuestion {
-    background-color: #639f38;
+    background-color: #154b6b;
     color: white;
     border: none;
     border-radius: 5px;
